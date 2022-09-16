@@ -8,7 +8,7 @@ export default async function api(request, response) {
     response.status(200).end();
 }
 ```
-`DELETE`, `POST` and `POST` requests to the API endpoint with a body size of 16 KiB or greater don't receive a response. The command below causes cURL to hang until the server exits.
+`DELETE`, `POST` and `PUT` requests to the API endpoint with a body size of 16 KiB or greater don't receive a response. The command below causes cURL to hang until the server exits.
 ```sh
 $ curl -i localhost:3000/api/api -d "$(printf %16384s)"
 # Meanwhile I stopped the server.
