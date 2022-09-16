@@ -14,8 +14,15 @@ $ curl -i localhost:3000/api/api -d "$(printf %16384s)"
 # Meanwhile I stopped the server.
 curl: (52) Empty reply from server
 ```
-Requests to the root are fine:
+Smaller requests and requests to the root are fine:
 ```sh
+$ curl -i localhost:3000/api/api -d "$(printf %16383s)"
+HTTP/1.1 200 OK
+Date: Fri, 16 Sep 2022 19:16:47 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+Transfer-Encoding: chunked
+
 $ curl -i localhost:3000 -d "$(printf %16384s)"
 HTTP/1.1 200 OK
 Cache-Control: no-store, must-revalidate
