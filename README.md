@@ -1,4 +1,5 @@
 vercel/next.js#39262
+
 `middleware.js`:
 ```js
 export default function middleware() {}
